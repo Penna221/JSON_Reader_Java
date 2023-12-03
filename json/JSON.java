@@ -352,6 +352,7 @@ public class JSON {
 	
 	/**
 	 * This function is used to write a KeyValuePair stored inside the JSON object into a file in JSON format.
+	 * Leave the KeyValuePairs key value empty "" to make it the outmost object.
 	 * @param f
 	 * @throws Exception
 	 */
@@ -368,7 +369,6 @@ public class JSON {
 	public void setKeyValuePair(KeyValuePair kv){
 		this.kv = kv;
 	}
-
 
 	private String getDataFromKeyValue(KeyValuePair kv) {
 		String toReturn = "";

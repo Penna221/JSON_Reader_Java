@@ -1,11 +1,10 @@
 
-# What
+# What is this
 This is a JSON Reader implementation in **Java**. This can be used to **read** and **write** .json files. 
 Data will be stored in **KeyValuePair** class.
 ***
 # How to use
 Use this library with following instructions:
-
 First you create a new JSON object with _file_ as parameter. 
 ```
 File file = new File("path\\to\\file.json");
@@ -69,15 +68,25 @@ keyValuePairs.add(kv);
 ObjectValue objectContainer = new ObjectValue(KeyValuePairs);
 
 //Create the root object of json and set it to json object.
-KeyValuePair object = new KeyValue("JSON",objectContainer);
+//Leave the key argument empty to make it the outmost object.
+KeyValuePair object = new KeyValue("",objectContainer);
 json.setKeyValuePair(object);
 
 //Now user can write it to file.
 File output = new File("Desired\\output\\file.json");
 json.writeFile(output);
 ```
+#### How to compile and turn to .jar
+You can clone the project and create a .bat file containing the following lines to compile and turn the files to .jar file.
+```
+@echo off
+javac -d bin json/*.java
+cd bin
+jar cf ..\myJar.jar json/*.class
+pause
+```
 
-
+***
 # What i learned
 This json reader implementation was done for the pure reason of learning and understanding how json works in its base layer. So i had to learn what data types it stores, how they are written in .json files,  how to parse them with java, and how to recursively parse array and/or object data.
 
