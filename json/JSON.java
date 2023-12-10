@@ -293,6 +293,7 @@ public class JSON {
 	private String parseKey(String s) {
 		String[] split = s.split(":");
 		String key = split[0];
+		key = key.trim();
 		key = removeSkin(key);
 		
 		return key;
