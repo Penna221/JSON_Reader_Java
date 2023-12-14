@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class JSON {
@@ -40,7 +41,7 @@ public class JSON {
 	public void readFile(boolean print) {
 		raw = "";
 		try {
-			BufferedReader reader = new BufferedReader(new FileReader(file));
+			BufferedReader reader = new BufferedReader(new FileReader(file, StandardCharsets.UTF_8));
 			String line = "";
 			if(print) {
 				System.out.println("--------------------------------");								
