@@ -43,6 +43,4 @@ public class ArrayValue extends DataType {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-
 }

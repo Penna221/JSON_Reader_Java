@@ -36,7 +36,14 @@ public class ObjectValue extends DataType {
 	public ArrayList<KeyValuePair> getObject() {
 		return obj;
 	}
-	
+	public DataType findObjectWithID(String id) {
+		for (KeyValuePair pair : obj) {
+			if (pair.getKey().equals(id)) {
+				return pair.getValue();
+			}
+		}
+		return null; // Return null if no object with the given ID is found
+	}
 	
 
 }
