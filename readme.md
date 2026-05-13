@@ -43,7 +43,7 @@ If you already know what value the keyValuePair holds, you can get the value str
 
 **findChild(String key)** method can be used to find the child of the keyValuePair object **fast** without more code. You need to give string parameter for that function. It first checks if the current KeyValuePair is an object. if so, it tries to find a child keyvalue with the given key and returns it. IF NOT, the function returns null. So please use this method with checks like:
 ```
-KeyValue val = json.findChild("key1");
+KeyValuePair val = json.findChild("key1");
 if(val !=null) {
     //do something with the val.
 }else {
@@ -69,7 +69,7 @@ ObjectValue objectContainer = new ObjectValue(KeyValuePairs);
 
 //Create the root object of json and set it to json object.
 //Leave the key argument empty to make it the outmost object.
-KeyValuePair object = new KeyValue("",objectContainer);
+KeyValuePair object = new KeyValuePair("",objectContainer);
 json.setKeyValuePair(object);
 
 //Now user can write it to file.
