@@ -189,6 +189,9 @@ public class JSON {
 	 * @return
 	 */
 	private String removeSkin(String s) {
+		if(s.length()<=2) {
+			return "";
+		}
 		String ss = s.substring(1,s.length()-1);
 		return ss;
 	}
@@ -200,6 +203,9 @@ public class JSON {
 	private ObjectValue parseObject(String obj) {
 		ArrayList<KeyValuePair> dataArray = new ArrayList<KeyValuePair>();
 		String s = removeSkin(obj);
+		if(s.length()==0) {
+			return new ObjectValue(dataArray);
+		}
 		ArrayList<String> splitted = splitWithCommas(s);
 		for(int i = 0; i < splitted.size(); i++) {
 			
@@ -273,6 +279,9 @@ public class JSON {
 	 */
 	private ArrayValue parseArray(String array) {
 		String s = removeSkin(array);
+		if(s.length()==0) {
+			return new ArrayValue(new DataType[0]);
+		}
 		DataType[] values;
 		
 		ArrayList<String> splitted = splitWithCommas(s);
